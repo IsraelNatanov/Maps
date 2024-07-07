@@ -15,7 +15,7 @@ const httpServer = createServer(app);
 
 const io = new Server(httpServer, {
   cors: {
-    origin: ['http://localhost:5173'],
+    origin: ['http://localhost:5173', 'https://maps-iota-seven.vercel.app'],
     credentials: true,
   },
 });
@@ -25,7 +25,7 @@ const polygonsFeaturesRouter = attachSocketPolygons(io);
 const eventsFeaturesRouter = attachSocketEvents(io);
 
 app.use(cors({
-  origin: ['http://localhost:5173'], 
+  origin: ['http://localhost:5173', 'https://maps-iota-seven.vercel.app'], 
   credentials: true,
 }));
 app.use(express.json());
