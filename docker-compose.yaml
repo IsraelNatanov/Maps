@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  api:
+    build: ./api
+    container_name: api_c
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./api:/src/app
+      - /node_modules
+  myblog:
+    build: ./myblog
+    container_name: myblog_c
+    ports:
+      - '5173:5173'
+    stdin_open: true
+    tty: true
+
