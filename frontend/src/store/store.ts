@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { eventsSlice } from "./features/eventFeaturesSlice";
 
 export const store = configureStore({

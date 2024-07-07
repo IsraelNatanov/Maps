@@ -1,8 +1,5 @@
 import { useQuery, useMutation, useQueryClient, UseQueryResult } from 'react-query';
 import {  request } from '../utils/axios-utils';
-import VectorLayer from 'ol/layer/Vector';
-import VectorSource from 'ol/source/Vector';
-import { Geometry } from 'ol/geom';
 import { FeaturesOfList, IFeatureCollection, IFeatures } from '../typs/featuresType';
 import { AxiosError } from 'axios';
 import { toastMessage } from '../utils/toastMessage';
@@ -56,7 +53,7 @@ interface UseAddFeatureResult {
 
 }
 
-export const useAddFeature = (vectorLayers: { [key: string]: VectorLayer<VectorSource<Geometry>> }): UseAddFeatureResult => {
+export const useAddFeature = (): UseAddFeatureResult => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation(
@@ -67,7 +64,7 @@ export const useAddFeature = (vectorLayers: { [key: string]: VectorLayer<VectorS
       return response.data;
     },
     {
-      onSuccess: (data, { feature, layer }) => {
+      onSuccess: ( { feature, layer }) => {
 
         queryClient.setQueryData<IFeatureCollection>(layer, (oldQueryData) => {
           if (!oldQueryData) {
@@ -103,7 +100,7 @@ interface UseDeleteFeatureResult {
 
 }
 
-export const useDeleteFeature = (vectorLayers: { [key: string]: VectorLayer<VectorSource> }): UseDeleteFeatureResult => {
+export const useDeleteFeature = (): UseDeleteFeatureResult => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation(

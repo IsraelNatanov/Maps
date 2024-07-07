@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useMemo, useRef, MutableRefObject } from "react";
-import { Feature, Map as OlMap } from "ol";
+import { useState, useEffect, useMemo, useRef, MutableRefObject } from "react";
+import { Map as OlMap } from "ol";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
-import Select, { SelectEvent } from "ol/interaction/Select";
+import { SelectEvent } from "ol/interaction/Select";
 import "ol/ol.css";
 import Button from "@mui/material/Button";
 import { styleButton, styleFunction } from "../../style/styleFunction";
@@ -21,7 +21,7 @@ import SimpleBackdrop from "../UI/simpleBackdrop/simpleBackdrop";
 import DeviderEvent from "../deviderEvent/deviderEvent";
 import RenderButtons from "../UI/renderButtons/renderButtons";
 import { ButtonsDataType } from "../../typs/buttonsDataType";
-import { useAddFeature, useDeleteFeature, useGetFeatureCollectionData, useGetFeaturesData } from "../../hooks/useFeaturesData";
+import { useAddFeature, useDeleteFeature, useGetFeatureCollectionData } from "../../hooks/useFeaturesData";
 import { useMapSelect } from "../../hooks/useMapSelect";
 import FormSelect from "../createFeature/createFeature";
 import { isVectorLayers } from "../../utils/createOlGeometry";
@@ -126,8 +126,8 @@ function MapContainer() {
   }, [vectorLayers]);
 
   console.log('successDeleteFeature',);
-  const { mutate: addFeatureMutate } = useAddFeature(vectorLayers);
-  const { mutate: deleteFeatureMutate } = useDeleteFeature(vectorLayers);
+  const { mutate: addFeatureMutate } = useAddFeature();
+  const { mutate: deleteFeatureMutate } = useDeleteFeature();
   
   const getAllFeatureNames = useMemo(() => {
     const allFeatureNames: Options[] = [];

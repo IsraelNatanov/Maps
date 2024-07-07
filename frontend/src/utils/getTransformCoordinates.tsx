@@ -1,5 +1,5 @@
 
-import { Feature, Map as OlMap } from "ol";
+import { Feature } from "ol";
 import { IFeatures } from "../typs/featuresType";
 import { Geometry, Point, Polygon } from "ol/geom";
 import { transform } from "ol/proj";

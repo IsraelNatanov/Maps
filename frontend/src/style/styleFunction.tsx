@@ -1,4 +1,3 @@
-import { Feature } from "ol";
 import { Point } from "ol/geom";
 import Fill from "ol/style/Fill";
 import Icon from "ol/style/Icon";

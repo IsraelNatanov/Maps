@@ -7,7 +7,7 @@ import { Eventes, FeaturesOfList } from "../../typs/featuresType";
   };
   export const fetchEvents = createAsyncThunk(
     "events/fetch",
-    async (thunkAPI) => {
+    async () => {
       const response = await fetch("http://localhost:5000/eventsLayer", {
         method: "GET",
       });

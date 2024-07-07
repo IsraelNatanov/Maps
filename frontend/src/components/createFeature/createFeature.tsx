@@ -9,8 +9,6 @@ import { DrawEvent } from "ol/interaction/Draw";
 import { getMessageContent } from "../../utils/getMessageContent";
 import { DrawInteractionType } from "../../typs/buttonsDataType";
 import { AddFeatureParams} from "../../hooks/useFeaturesData";
-import { transform } from "ol/proj";
-import { Point, Polygon } from "ol/geom";
 import VectorSource from "ol/source/Vector";
 import AlertDialog from "../UI/alert/alertDialog";
 import { IFeatures } from "../../typs/featuresType";

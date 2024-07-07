@@ -95,7 +95,7 @@ const SearchGeomtry: React.FC<MapProps> = ({ map, options }) => {
       autoHighlight
       getOptionLabel={(option) => option.label}
       sx={{ width: 200 }}
-      onChange={async (event, value) => {
+      onChange={async (_event, value) => {
         searchByName(value!.label)
      
       }}
