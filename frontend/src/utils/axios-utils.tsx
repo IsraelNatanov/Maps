@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig, AxiosError, AxiosResponse } from 'axios';
 
 interface RequestOptions extends AxiosRequestConfig {}
 
-export const apiUrl = 'https://backend.runmydocker-app.com'
+export const apiUrl = 'https://maps-api-1.onrender.com'
 export const client = axios.create({ baseURL: apiUrl });
 
 export const request = (options: RequestOptions): Promise<AxiosResponse> => {
