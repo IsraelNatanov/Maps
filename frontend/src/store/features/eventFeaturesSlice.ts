@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Eventes, FeaturesOfList } from "../../typs/featuresType";
+import { apiUrl } from "../../utils/axios-utils";
 
 
   const initialState: Eventes = {
@@ -8,7 +9,7 @@ import { Eventes, FeaturesOfList } from "../../typs/featuresType";
   export const fetchEvents = createAsyncThunk(
     "events/fetch",
     async () => {
-      const response = await fetch("http://localhost:5000/eventsLayer", {
+      const response = await fetch(`${apiUrl}/eventsLayer`, {
         method: "GET",
       });
       const data = response.json();

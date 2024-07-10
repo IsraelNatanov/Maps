@@ -1,9 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
 import "./db/mongoConnect";
-import pointFeaturesR, { attachSocketPoints } from "./routes/pointFeatures";
-import polygonFeaturesR, { attachSocketPolygons } from "./routes/polygonFeatures";
-import eventsR, { attachSocketEvents } from "./routes/eventFeatures";
+import { attachSocketPoints } from "./routes/pointFeatures";
+import { attachSocketPolygons } from "./routes/polygonFeatures";
+import { attachSocketEvents } from "./routes/eventFeatures";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import cors, { CorsOptions } from "cors";
