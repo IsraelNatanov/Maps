@@ -148,7 +148,7 @@ const CreateFeature: React.FC<MapComponentProps> = ({ map, setMap, addFeatureMut
 
             <div className="row-box">
                 <button
-                disabled = {selectRef.current?.value === "None" || !selectRef}
+                disabled = {selectRef.current?.value === "None" || !selectRef.current}
                     className="form-control"
                     onClick={() => setOpenAlertDialog(true)}
                 >
